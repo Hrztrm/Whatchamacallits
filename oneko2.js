@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  const nekoSpeed = 10,
+  const nekoSpeed = 15,
     variants = [
       ["classic", "Classic"],
       ["dog", "Dog"],
