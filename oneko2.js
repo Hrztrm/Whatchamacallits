@@ -498,6 +498,7 @@
 //   })();
 
 Mousetrap.bind("o n e k o", () => {
+    console.log("ONEKO CHANGER ACTIVATIONG!");
   showPickerModal(); // Your custom function to show a modal
 });
 
@@ -505,10 +506,12 @@ function showPickerModal() {
   const modal = document.getElementById('modal');
   const content = document.getElementById('modal-content');
 
-  // Replace with your dynamic picker UI
-  content.innerHTML = '<p>Put your neko picker here!</p>';
-  pickerModal();
-//   modal.style.display = 'block';
+  // Clear previous content and add the new picker content
+  content.innerHTML = ''; // Clear old content
+  content.appendChild(pickerModal()); // Inject the picker
+
+  // Show the modal
+  modal.style.display = 'block';
 }
 
   if (parseLocalStorage("forceSleep", false)) {
