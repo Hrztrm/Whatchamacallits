@@ -468,6 +468,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setVariant(variantEnum);
         document.querySelector(".oneko-variant-button-selected")?.classList.remove("oneko-variant-button-selected");
         div.classList.add("oneko-variant-button-selected");
+        closeModal()
       };
 
       if (variantEnum[0] === variant) {
