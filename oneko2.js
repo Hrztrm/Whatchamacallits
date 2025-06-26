@@ -498,8 +498,16 @@
 //   })();
 
 Mousetrap.bind("o n e k o", () => {
-    console.log("ONEKO CHANGER ACTIVATIONG!");
+    console.log("🐾 'oneko' shortcut triggered!");
   showPickerModal(); // Your custom function to show a modal
+});
+
+Mousetrap.bind("a", () => {
+    console.log("a is pressed");
+});
+
+Mousetrap.bind("deb", () => {
+    console.log("deb is pressed");
 });
 
 function showPickerModal() {
