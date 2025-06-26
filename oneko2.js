@@ -468,10 +468,11 @@
         div.classList.add("oneko-variant-button-selected");
       }
 
-      Spicetify.Tippy(div, {
-        ...Spicetify.TippyProps,
+      tippy(div, {
         content: variantEnum[1],
-      });
+        theme: 'light-border', // Optional: Pick a Tippy theme
+        placement: 'top',      // Optional: top, bottom, left, right
+        });
 
       return div;
     }
@@ -483,18 +484,36 @@
     return container;
   }
 
-  (async () => {
-    while (!Spicetify.Mousetrap) {
-      await new Promise((r) => setTimeout(r, 100));
-    }
-    Spicetify.Mousetrap.bind("o n e k o", () => {
-      Spicetify.PopupModal.display({
-        title: "Choose your neko",
-        // Render the modal new every time it is opened
-        content: pickerModal(),
-      });
-    });
-  })();
+//   (async () => {
+//     while (!Spicetify.Mousetrap) {
+//       await new Promise((r) => setTimeout(r, 100));
+//     }
+//     Spicetify.Mousetrap.bind("o n e k o", () => {
+//       Spicetify.PopupModal.display({
+//         title: "Choose your neko",
+//         // Render the modal new every time it is opened
+//         content: pickerModal(),
+//       });
+//     });
+//   })();
+
+Mousetrap.bind("o n e k o", () => {
+  showPickerModal(); // Your custom function to show a modal
+});
+
+function showPickerModal() {
+  const modal = document.getElementById('modal');
+  const content = document.getElementById('modal-content');
+
+  // Replace with your dynamic picker UI
+  content.innerHTML = '<p>Put your neko picker here!</p>';
+
+  modal.style.display = 'block';
+}
+
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
 
   if (parseLocalStorage("forceSleep", false)) {
     while (!document.querySelector(".main-nowPlayingBar-center .playback-progressbar")) {
