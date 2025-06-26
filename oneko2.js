@@ -1,4 +1,10 @@
 // oneko.js: https://github.com/adryd325/oneko.js
+document.addEventListener("DOMContentLoaded", () => {
+  // wait until Mousetrap is ready
+  if (typeof Mousetrap === "undefined") {
+    console.error("❌ Mousetrap not loaded.");
+    return;
+  }
 
 (async function oneko() {
   const nekoEl = document.createElement("div");
@@ -497,17 +503,10 @@
 //     });
 //   })();
 
+
 Mousetrap.bind("o n e k o", () => {
     console.log("🐾 'oneko' shortcut triggered!");
   showPickerModal(); // Your custom function to show a modal
-});
-
-Mousetrap.bind("a", () => {
-    console.log("a is pressed");
-});
-
-Mousetrap.bind("deb", () => {
-    console.log("deb is pressed");
 });
 
 function showPickerModal() {
@@ -529,6 +528,8 @@ function showPickerModal() {
     sleep();
   }
 })();
+
+});
 
 function closeModal() {
   document.getElementById('modal').style.display = 'none';
