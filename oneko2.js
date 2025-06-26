@@ -507,12 +507,8 @@ function showPickerModal() {
 
   // Replace with your dynamic picker UI
   content.innerHTML = '<p>Put your neko picker here!</p>';
-
-  modal.style.display = 'block';
-}
-
-function closeModal() {
-  document.getElementById('modal').style.display = 'none';
+  pickerModal();
+//   modal.style.display = 'block';
 }
 
   if (parseLocalStorage("forceSleep", false)) {
@@ -522,3 +518,7 @@ function closeModal() {
     sleep();
   }
 })();
+
+function closeModal() {
+  document.getElementById('modal').style.display = 'none';
+}
